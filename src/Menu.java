@@ -1,13 +1,11 @@
 import java.util.Scanner;
 
 public class Menu {
-    Scanner scanner = new Scanner(System.in);
 
     public Menu() {
-        beginGame();
         }
 
-    public void beginGame() {
+    public void beginGame(Scanner scanner) {
         System.out.println("Tu veux jouer avec moi ? Oui (1) / Non (2).");
         String choice = scanner.next();
         if (choice.equals("1") || choice.equals("2")) {
@@ -18,9 +16,10 @@ public class Menu {
                 System.out.println("Tu quittes la partie...");
             }
         } else {
-            beginGame();
+            beginGame(scanner);
         }
     }
+
 
 
     }
