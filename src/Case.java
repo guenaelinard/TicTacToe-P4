@@ -1,8 +1,8 @@
 public class Case {
     private int value;
 
-    public Case() {
-
+    public Case(int value) {
+        this.value = value;
     }
 
     public String defineCase(int value) {

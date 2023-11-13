@@ -9,7 +9,8 @@ public class Main {
         Menu menu = new Menu();
         menu.beginGame(scanner);
 
-//        Game gameOne = new Game();
+        Game gameOne = new Game();
+        gameOne.chooseCase(scanner);
 
     }
 }
