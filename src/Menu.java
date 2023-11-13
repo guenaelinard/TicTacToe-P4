@@ -11,13 +11,18 @@ public class Menu {
         if (choice.equals("1") || choice.equals("2")) {
             if (choice.equals("1")) {
                 System.out.println("Que la partie commennnnnce !");
-//                Game gameOne = new Game();
             } else if (choice.equals("2")) {
                 System.out.println("Tu quittes la partie...");
             }
         } else {
             beginGame(scanner);
         }
+
+        Game gameOne = new Game();
+        Board plateau = new Board();
+        Player joueurUn = new PlayerOne();
+        gameOne.chooseCase(scanner);
+        gameOne.interaction(joueurUn, plateau, gameOne.chooseCase(scanner));
     }
 
 

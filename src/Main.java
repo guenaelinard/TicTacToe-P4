@@ -8,9 +8,5 @@ public class Main {
         System.out.println("Zéééépartiiii!");
         Menu menu = new Menu();
         menu.beginGame(scanner);
-
-        Game gameOne = new Game();
-        gameOne.chooseCase(scanner);
-
     }
 }

@@ -5,4 +5,7 @@ public abstract class Player {
         this.attribute = attribute;
     }
 
+    public int getAttribute() {
+        return attribute;
+    }
 }
