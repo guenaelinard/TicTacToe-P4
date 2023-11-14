@@ -1,9 +1,13 @@
+import players.Player;
+import players.PlayerHuman;
+import players.PlayerBot;
+
 import java.util.Scanner;
 
 public class Game {
     private Board board = new Board();
-    private PlayerOne playerOne = new PlayerOne();
-    private PlayerTwo playerTwo = new PlayerTwo();
+    private Player playerOne = new Player('X');
+    private Player playerTwo = new Player('O');
 
 
     public String chooseCase(Scanner scanner) {
@@ -13,6 +17,9 @@ public class Game {
     }
     public void interaction(Player player, Board board, String caseNum) {
         board.caseTick(player, board.getCaseFromNum(caseNum));
+        System.out.println(player);
+        System.out.println(board);
+        System.out.println(caseNum);
     }
 
 

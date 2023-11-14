@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import players.Player;
 
 public class Board {
     private final Case[][] board = new Case[3][3];
@@ -6,7 +6,7 @@ public class Board {
     public Board() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                board[i][j] = new Case(0);
+                board[i][j] = new Case('0');
             }
         }
     }
@@ -26,12 +26,23 @@ public class Board {
         };
     }
 
-    public void caseTick(Player player, Case caseChoice) {
-        if (player.getAttribute() == 1) {
-            caseChoice.defineCase(1);
+    public Case defineCase(Case caseChoice, char value) {
+        if (value == '0') {
+            return caseChoice = new Case('0');
+        } else if (value == 'X') {
+            return caseChoice = new Case('X');
+        } else if (value == 'O') {
+            return caseChoice = new Case('O');
         } else {
-            caseChoice.defineCase(2);
+            System.out.println("Attention, la case ne sait pas ce qu'elle est !");
+            return null;
         }
     }
 
+    public void caseTick(Player player, Case caseChoice) {
+            defineCase(caseChoice, player.getAttribute());
+        }
+
 }
+
+

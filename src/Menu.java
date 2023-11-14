@@ -1,3 +1,6 @@
+import players.Player;
+import players.PlayerHuman;
+
 import java.util.Scanner;
 
 public class Menu {
@@ -20,7 +23,7 @@ public class Menu {
 
         Game gameOne = new Game();
         Board plateau = new Board();
-        Player joueurUn = new PlayerOne();
+        Player joueurUn = new Player('1');
         gameOne.chooseCase(scanner);
         gameOne.interaction(joueurUn, plateau, gameOne.chooseCase(scanner));
     }
