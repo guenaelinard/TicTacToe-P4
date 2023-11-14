@@ -16,10 +16,10 @@ public class Game {
         return caseNum;
     }
     public void interaction(Player player, Board board, String caseNum) {
-        board.caseTick(player, board.getCaseFromNum(caseNum));
+        board.caseTick(player, caseNum);
         System.out.println(player);
         System.out.println(board);
-        System.out.println(caseNum);
+        System.out.println(board.getCaseFromNum(caseNum));
     }
 
 
