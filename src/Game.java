@@ -18,8 +18,6 @@ public class Game {
     public void interaction(Player player, Board board, String caseNum) {
         board.caseTick(player, caseNum);
         System.out.println(player);
-        System.out.println(board);
-        System.out.println(board.getCaseFromNum(caseNum));
     }
 
 

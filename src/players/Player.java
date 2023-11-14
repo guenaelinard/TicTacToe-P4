@@ -10,4 +10,9 @@ public class Player {
     public String getAttribute() {
         return attribute;
     }
+
+    @Override
+    public String toString() {
+        return "Le joueur joue les " + attribute;
+    }
 }
