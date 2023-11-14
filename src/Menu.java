@@ -24,7 +24,11 @@ public class Menu {
         Game gameOne = new Game();
         Board plateau = new Board();
         Player joueurUn = new Player("X");
+        Player joueurDeux = new Player("O");
+
+
         gameOne.interaction(joueurUn, plateau, gameOne.chooseCase(scanner));
+        gameOne.interaction(joueurDeux, plateau, gameOne.chooseCase(scanner));
     }
 
     }

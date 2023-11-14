@@ -5,8 +5,16 @@ public class Case {
         this.value = value;
     }
 
+    public boolean isCaseEmpty() {
+        return this.getValue().equals(" ");
+    }
+
     @Override
     public String toString() {
+        return value;
+    }
+
+    public String getValue() {
         return value;
     }
 
