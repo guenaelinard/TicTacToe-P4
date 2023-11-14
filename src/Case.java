@@ -1,9 +1,12 @@
 public class Case {
-    private char value;
+    private String value;
 
-    public Case(char value) {
+    public Case(String value) {
         this.value = value;
     }
 
-
+//    @Override
+//    public String toString() {
+//        return value;
+//    }
 }

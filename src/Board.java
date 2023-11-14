@@ -1,12 +1,14 @@
 import players.Player;
 
+import java.util.Arrays;
+
 public class Board {
     private final Case[][] board = new Case[3][3];
 
     public Board() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                board[i][j] = new Case('0');
+                board[i][j] = new Case("0");
             }
         }
     }
@@ -26,23 +28,28 @@ public class Board {
         };
     }
 
-    public Case defineCase(Case caseChoice, char value) {
-        if (value == '0') {
-            return caseChoice = new Case('0');
-        } else if (value == 'X') {
-            return caseChoice = new Case('X');
-        } else if (value == 'O') {
-            return caseChoice = new Case('O');
+    public Case defineCase(Case caseChoice, String value) {
+        if (value.equals("0")) {
+            caseChoice = new Case(" ");
+        } else if (value.equals("X")) {
+            caseChoice = new Case("X");
+        } else if (value.equals("O")) {
+            caseChoice = new Case("O");
         } else {
             System.out.println("Attention, la case ne sait pas ce qu'elle est !");
-            return null;
+            caseChoice = null;
         }
+        return caseChoice;
     }
 
     public void caseTick(Player player, Case caseChoice) {
             defineCase(caseChoice, player.getAttribute());
         }
 
+//    @Override
+//    public String toString() {
+//        return Arrays.toString(board);
+//    }
 }
 
 

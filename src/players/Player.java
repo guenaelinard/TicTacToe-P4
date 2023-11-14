@@ -1,13 +1,13 @@
 package players;
 
 public class Player {
-    private char attribute;
+    private String attribute;
 
-    public Player(char attribute) {
+    public Player(String attribute) {
         this.attribute = attribute;
     }
 
-    public char getAttribute() {
+    public String getAttribute() {
         return attribute;
     }
 }

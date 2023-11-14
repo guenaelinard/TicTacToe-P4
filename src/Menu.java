@@ -23,12 +23,9 @@ public class Menu {
 
         Game gameOne = new Game();
         Board plateau = new Board();
-        Player joueurUn = new Player('1');
-        gameOne.chooseCase(scanner);
+        Player joueurUn = new Player("X");
         gameOne.interaction(joueurUn, plateau, gameOne.chooseCase(scanner));
     }
-
-
 
     }
 

@@ -5,9 +5,9 @@ import players.PlayerBot;
 import java.util.Scanner;
 
 public class Game {
-    private Board board = new Board();
-    private Player playerOne = new Player('X');
-    private Player playerTwo = new Player('O');
+//    private Board board = new Board();
+//    private Player playerOne = new Player("X");
+//    private Player playerTwo = new Player("O");
 
 
     public String chooseCase(Scanner scanner) {
