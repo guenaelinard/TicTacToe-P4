@@ -1,9 +1,11 @@
 import players.Player;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Board {
     private final Case board[][] = new Case[3][3];
+    Scanner scanner = new Scanner(System.in);
 
     public Board() {
         for (int i = 0; i < 3; i++) {
@@ -39,8 +41,12 @@ public class Board {
                 System.out.println("Attention, la case ne sait pas ce qu'elle est !");
             }
         } else {
-            System.out.println("la case a déjà été jouée");
+            playAgainSameCase();
         }
+    }
+
+    public void playAgainSameCase() {
+        System.out.println("la case a déjà été jouée, choisis une autre case.");
     }
 
 //    public boolean checkCaseEmpty(Case caseX) {
@@ -49,15 +55,24 @@ public class Board {
 
     public void caseTick(Player player, String caseNum) {
 
-            defineCase(caseNum, player.getAttribute());
+        defineCase(caseNum, player.getAttribute());
 
-            for (int i = 0; i < board.length; i++) {
-                for (int j = 0; j < board[i].length; j++) {
-                    System.out.print(board[i][j] + " | ");
-                }
-                System.out.println();
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[i].length; j++) {
+                System.out.print(board[i][j] + " | ");
+            }
+            System.out.println();
         }
     }
+
+//    public boolean isBoardFull() {
+//        for (Case[] element : board) {
+//            if (element.equals(" ")) {
+//                return true;
+//            }
+//        }
+//        return false;
+//    }
 
 }
 
