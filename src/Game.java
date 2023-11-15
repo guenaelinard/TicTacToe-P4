@@ -16,9 +16,9 @@ public class Game {
         return caseNum;
     }
     public void interaction(Player player, Board board, String caseNum) {
-        board.caseTick(player, caseNum);
-        System.out.println(player);
+            board.caseTick(player, caseNum);
+        }
     }
 
 
-}
+

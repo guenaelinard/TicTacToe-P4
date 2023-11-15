@@ -51,14 +51,14 @@ public class Board {
 
     public void caseTick(Player player, String caseNum) {
 
-        defineCase(caseNum, player.getAttribute());
+            defineCase(caseNum, player.getAttribute());
 
-        for (int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board[i].length; j++) {
-                System.out.print(board[i][j] + " | ");
+            for (int i = 0; i < board.length; i++) {
+                for (int j = 0; j < board[i].length; j++) {
+                    System.out.print(board[i][j] + " | ");
+                }
+                System.out.println();
             }
-            System.out.println();
-        }
     }
 
     public boolean isntBoardFull() {
@@ -68,6 +68,50 @@ for(int i = 0; i < 3; i++){
         }
     }
     return false;
+    }
+
+    public boolean isHorizontallyAligned(Player perso) {
+            for(int j = 0; j < 3; j++){
+                if(board[0][j].getValue().equals(perso.getAttribute()) && board[0][j].getValue().equals(board[1][j].getValue()) &&
+                        board[0][j].getValue().equals(board[2][j].getValue())) {
+                    return true;
+                }
+            }
+        return false;
+    }
+
+    public boolean isVerticallyAligned(Player perso) {
+        for(int i = 0; i < 3; i++){
+                if(board[i][0].getValue().equals(perso.getAttribute()) && board[i][0].getValue().equals(board[i][1].getValue()) &&
+                        board[i][0].getValue().equals(board[i][2].getValue())) {
+                    return true;
+                }
+        }
+        return false;
+    }
+
+    public boolean isFirstDiagonallyAligned(Player perso) {
+            if(board[0][0].getValue().equals(perso.getAttribute()) && board[0][0].getValue().equals(board[1][1].getValue()) &&
+                    board[0][0].getValue().equals(board[2][2].getValue())) {
+                return true;
+            }
+            return false;
+    }
+
+    public boolean isSecondDiagonallyAligned(Player perso) {
+        if(board[3][0].getValue().equals(perso.getAttribute()) && board[3][0].getValue().equals(board[2][2].getValue()) &&
+                board[3][0].getValue().equals(board[0][3].getValue())) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean hasWon(Player perso) {
+        if (isHorizontallyAligned(perso) || isVerticallyAligned(perso) || isFirstDiagonallyAligned(perso) || isSecondDiagonallyAligned(perso)) {
+            System.out.println(perso + " et gagne !");
+            return true;
+        }
+        return false;
     }
 
 }

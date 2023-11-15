@@ -26,7 +26,7 @@ public class Menu {
         Player joueurUn = new Player("X");
         Player joueurDeux = new Player("O");
 
-        while (plateau.isntBoardFull()) {
+        while (plateau.isntBoardFull() && !plateau.hasWon(joueurUn) && !plateau.hasWon(joueurDeux)) {
             gameOne.interaction(joueurUn, plateau, gameOne.chooseCase(scanner));
             gameOne.interaction(joueurDeux, plateau, gameOne.chooseCase(scanner));
         }
