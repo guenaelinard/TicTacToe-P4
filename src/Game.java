@@ -3,8 +3,13 @@ import players.Player;
 import java.util.Scanner;
 
 public class Game {
-    Board plateau = new Board();
-    Player joueur = new Player("X");
+    Board plateau;
+    Player joueur;
+
+    public Game(Board plateau, Player joueur) {
+        this.plateau = plateau;
+        this.joueur = joueur;
+    }
 
     public String chooseCase(Scanner scanner) {
         System.out.println("Choisis une case.");
@@ -12,12 +17,26 @@ public class Game {
         return caseNum;
     }
 
+//    public String chooseAnotherCase(Scanner scanner) {
+//        System.out.println("Choisis une case.");
+//        String caseNum = scanner.next();
+//        return caseNum;
+//    }
+
     public void runGame(Scanner scanner) {
-        //GROS IF LA ? REJOUE SANS SWITCHER SI CASE DEJA PRISE
-            interaction(joueur, plateau, chooseCase(scanner));
+
+        interaction(joueur, plateau, chooseCase(scanner));
+
         while (plateau.isntBoardFull() && !plateau.hasWon(joueur)) {
-            // OU LA?
+
+//            if (!plateau.isPlayingAgainSameCase(chooseCase(scanner))) {
+
             interaction(switchTurn(joueur), plateau, chooseCase(scanner));
+
+//            } else {
+//
+//                interaction(joueur, plateau, chooseCase(scanner));
+//            }
         }
     }
 
@@ -33,7 +52,6 @@ public class Game {
     public void interaction(Player player, Board board, String caseNum) {
         board.caseTick(player, caseNum);
     }
-
 
 
 }
