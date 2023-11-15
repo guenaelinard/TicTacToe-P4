@@ -26,19 +26,13 @@ public class Menu {
         Player joueurUn = new Player("X");
         Player joueurDeux = new Player("O");
 
-//        while (!plateau.isBoardFull()) {
+        while (plateau.isntBoardFull()) {
             gameOne.interaction(joueurUn, plateau, gameOne.chooseCase(scanner));
             gameOne.interaction(joueurDeux, plateau, gameOne.chooseCase(scanner));
-            gameOne.interaction(joueurUn, plateau, gameOne.chooseCase(scanner));
-            gameOne.interaction(joueurDeux, plateau, gameOne.chooseCase(scanner));
-            gameOne.interaction(joueurUn, plateau, gameOne.chooseCase(scanner));
-            gameOne.interaction(joueurDeux, plateau, gameOne.chooseCase(scanner));
-            gameOne.interaction(joueurUn, plateau, gameOne.chooseCase(scanner));
-            gameOne.interaction(joueurDeux, plateau, gameOne.chooseCase(scanner));
-            gameOne.interaction(joueurUn, plateau, gameOne.chooseCase(scanner));
-//        }
-    }
+        }
 
     }
+
+}
 
 

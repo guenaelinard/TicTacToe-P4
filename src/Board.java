@@ -33,14 +33,10 @@ public class Board {
     public void defineCase(String caseNum, String value) {
 
         if (getCaseFromNum(caseNum).isCaseEmpty()) {
-            if (value.equals("X")) {
-                getCaseFromNum(caseNum).setValue("X");
-            } else if (value.equals("O")) {
-                getCaseFromNum(caseNum).setValue("O");
-            } else {
-                System.out.println("Attention, la case ne sait pas ce qu'elle est !");
-            }
+                getCaseFromNum(caseNum).setValue(value);
+
         } else {
+
             playAgainSameCase();
         }
     }
@@ -65,14 +61,14 @@ public class Board {
         }
     }
 
-//    public boolean isBoardFull() {
-//        for (Case[] element : board) {
-//            if (element.equals(" ")) {
-//                return true;
-//            }
-//        }
-//        return false;
-//    }
+    public boolean isntBoardFull() {
+for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 3; j++){
+            if(board[i][j].getValue().equals(" ")) return true;
+        }
+    }
+    return false;
+    }
 
 }
 
