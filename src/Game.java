@@ -5,9 +5,9 @@ import players.PlayerBot;
 import java.util.Scanner;
 
 public class Game {
-//    private Board board = new Board();
-//    private Player playerOne = new Player("X");
-//    private Player playerTwo = new Player("O");
+    Board plateau = new Board();
+    Player joueurUn = new Player("X");
+    Player joueurDeux = new Player("O");
 
 
     public String chooseCase(Scanner scanner) {
@@ -15,6 +15,15 @@ public class Game {
         String caseNum = scanner.next();
         return caseNum;
     }
+
+    public void runGame(Scanner scanner) {
+
+        while (plateau.isntBoardFull() && !plateau.hasWon(joueurUn) && !plateau.hasWon(joueurDeux)) {
+        interaction(joueurUn, plateau, chooseCase(scanner));
+        interaction(joueurDeux, plateau, chooseCase(scanner));
+    }
+    }
+
     public void interaction(Player player, Board board, String caseNum) {
             board.caseTick(player, caseNum);
         }

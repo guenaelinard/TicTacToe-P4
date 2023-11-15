@@ -99,8 +99,8 @@ for(int i = 0; i < 3; i++){
     }
 
     public boolean isSecondDiagonallyAligned(Player perso) {
-        if(board[3][0].getValue().equals(perso.getAttribute()) && board[3][0].getValue().equals(board[2][2].getValue()) &&
-                board[3][0].getValue().equals(board[0][3].getValue())) {
+        if(board[2][0].getValue().equals(perso.getAttribute()) && board[2][0].getValue().equals(board[1][1].getValue()) &&
+                board[2][0].getValue().equals(board[0][2].getValue())) {
             return true;
         }
         return false;

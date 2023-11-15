@@ -21,16 +21,6 @@ public class Menu {
             beginGame(scanner);
         }
 
-        Game gameOne = new Game();
-        Board plateau = new Board();
-        Player joueurUn = new Player("X");
-        Player joueurDeux = new Player("O");
-
-        while (plateau.isntBoardFull() && !plateau.hasWon(joueurUn) && !plateau.hasWon(joueurDeux)) {
-            gameOne.interaction(joueurUn, plateau, gameOne.chooseCase(scanner));
-            gameOne.interaction(joueurDeux, plateau, gameOne.chooseCase(scanner));
-        }
-
     }
 
 }
