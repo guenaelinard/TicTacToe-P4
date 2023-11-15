@@ -1,13 +1,10 @@
 import players.Player;
-import players.PlayerHuman;
-import players.PlayerBot;
 
 import java.util.Scanner;
 
 public class Game {
     Board plateau = new Board();
-    Player joueurUn = new Player("X");
-    Player joueurDeux = new Player("O");
+    Player joueur = new Player("X");
 
     public String chooseCase(Scanner scanner) {
         System.out.println("Choisis une case.");
@@ -16,18 +13,21 @@ public class Game {
     }
 
     public void runGame(Scanner scanner) {
-            interaction(joueurUn, plateau, chooseCase(scanner));
-        while (plateau.isntBoardFull() && !plateau.hasWon(joueurUn) && !plateau.hasWon(joueurDeux)) {
-            interaction(switchTurn(joueurUn), plateau, chooseCase(scanner));
+        //GROS IF LA ? REJOUE SANS SWITCHER SI CASE DEJA PRISE
+            interaction(joueur, plateau, chooseCase(scanner));
+        while (plateau.isntBoardFull() && !plateau.hasWon(joueur)) {
+            // OU LA?
+            interaction(switchTurn(joueur), plateau, chooseCase(scanner));
         }
     }
 
     public Player switchTurn(Player perso) {
-        if (perso.equals(joueurUn)) {
-            return joueurDeux;
+        if (perso.getAttribute().equals("X")) {
+            perso.setAttribute("O");
         } else {
-            return joueurUn;
+            perso.setAttribute("X");
         }
+        return perso;
     }
 
     public void interaction(Player player, Board board, String caseNum) {

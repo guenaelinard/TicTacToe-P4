@@ -11,8 +11,12 @@ public class Player {
         return attribute;
     }
 
+    public void setAttribute(String attribute) {
+        this.attribute = attribute;
+    }
+
     @Override
     public String toString() {
-        return "Le joueur joue les " + attribute;
+        return "Le joueur qui joue les " + attribute;
     }
 }

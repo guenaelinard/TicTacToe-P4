@@ -36,18 +36,17 @@ public class Board {
                 getCaseFromNum(caseNum).setValue(value);
 
         } else {
-
-            playAgainSameCase();
+            isPlayingAgainSameCase(caseNum);
         }
     }
 
-    public void playAgainSameCase() {
-        System.out.println("la case a déjà été jouée, choisis une autre case.");
+    public boolean isPlayingAgainSameCase(String caseNum) {
+        if (!getCaseFromNum(caseNum).getValue().equals(" ")) {
+            System.out.println("la case a déjà été jouée, choisis une autre case.");
+            return true;
+        }
+        return false;
     }
-
-//    public boolean checkCaseEmpty(Case caseX) {
-//        return caseX.isCaseEmpty();
-//    }
 
     public void caseTick(Player player, String caseNum) {
 
@@ -108,7 +107,7 @@ for(int i = 0; i < 3; i++){
 
     public boolean hasWon(Player perso) {
         if (isHorizontallyAligned(perso) || isVerticallyAligned(perso) || isFirstDiagonallyAligned(perso) || isSecondDiagonallyAligned(perso)) {
-            System.out.println(perso + " et gagne !");
+            System.out.println(perso + " gagne !");
             return true;
         }
         return false;
