@@ -1,5 +1,4 @@
 import players.Player;
-
 import java.util.Scanner;
 
 public class Game {
