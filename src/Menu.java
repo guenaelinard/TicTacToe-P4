@@ -16,6 +16,7 @@ public class Menu {
                 System.out.println("Que la partie commennnnnce !");
             } else if (choice.equals("2")) {
                 System.out.println("Tu quittes la partie...");
+                System.exit(0);
             }
         } else {
             beginGame(scanner);
